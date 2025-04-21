@@ -1,0 +1,244 @@
+/* confirmation.component.css */
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: white;
+}
+
+.confirmation-card {
+  width: 100%;
+  width: 780px;
+  min-height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 600;
+  color: #232323;
+  margin: 0;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #232323;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #555;
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+.content {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+  color: #4CAF50;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.subtitle {
+  font-family: Inter;
+  font-size: 38px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  color: #232323;
+}
+
+.description {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 32px;
+  line-height: 1.5;
+  max-width: 600px;
+}
+
+.box-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login-button {
+  background-color: #000;
+  width: 80%;
+  max-width: 500px;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 100%;
+  font-family: Inter;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: pulse 1.5s infinite;
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.redirect-timer {
+  font-family: Inter;
+  font-size: 14px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* Animation for button hover */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .confirmation-card {
+    padding: 20px 15px;
+    /* min-height: auto; */
+  }
+
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .login-button {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Ensure consistent height for the card on different screen sizes */
+@media (min-height: 700px) {
+  .confirmation-card {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Improve focus states for accessibility */
+.back-button:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.login-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Improve RTL support */
+html[dir="rtl"] .back-button svg {
+  transform: rotate(0);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}

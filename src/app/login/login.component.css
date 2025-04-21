@@ -1,0 +1,351 @@
+/* login.component.css */
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: white;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 880px;
+  height: 650px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  text-align: center;
+}
+
+.store-icon {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: #222;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.icon-wrapper svg {
+  width: 35px;
+  height: 35px;
+  color: white;
+}
+
+.subtitle {
+  font-family: Inter;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #232323;
+}
+
+.description {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  color: #4CAF50;
+  margin-bottom: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0px 30px;
+}
+
+.form-field {
+  position: relative;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.input-container:focus-within {
+  border-color: #333;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.field-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  color: #232323;
+}
+
+.field-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+  flex: 1;
+  padding: 15px 12px;
+  font-family: Inter;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+  width: 100%;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 15px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password svg {
+  width: 28px;
+  height: 28px;
+}
+
+.error .input-container {
+  border-color: #e53935;
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 15px;
+  font-family: Inter;
+  margin-top: 3px;
+  text-align: left;
+  padding-left: 10px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.error .error-message {
+  height: 20px;
+}
+
+.remember-forgot-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.remember-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+/* login.component.css (continued) */
+
+.remember-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 16px;
+  color: #555;
+}
+
+.remember-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  font-family: Inter;
+  font-size: 16px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.login-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 100%;
+  font-family: Inter;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+  font-family: Inter;
+}
+
+.spinner {
+  animation: rotate 2s linear infinite;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.spinner .path {
+  stroke: #ffffff;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.signup-link a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animation for form fields on focus */
+.input-container:focus-within .field-icon {
+  color: #333;
+}
+
+.input-container:focus-within {
+  transform: translateY(-2px);
+}
+
+/* Animation for button hover */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.login-button:hover:not(:disabled) {
+  animation: pulse 1.5s infinite;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 20px 15px;
+  }
+
+  .subtitle {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  form {
+    margin: 0 10px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+
+  .login-button {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .remember-forgot-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}

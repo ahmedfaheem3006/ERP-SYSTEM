@@ -1,0 +1,276 @@
+<div class="register-container">
+  <div class="register-card" [@fadeInUp]>
+    <!-- <h1 class="title">Createx</h1> -->
+    <!-- Create a new account -->
+    <div class="store-icon">
+      <div class="icon-wrapper">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="43"
+          height="47"
+          viewBox="0 0 43 47"
+          fill="none"
+        >
+          <path
+            d="M3.2832 21.3501V27.8001C3.2832 35.9077 3.2832 39.9626 5.79498 42.4803C8.30675 44.9979 12.3466 45.0001 20.4284 45.0001H22.5716C30.6534 45.0001 34.6954 45.0001 37.205 42.4803C39.7146 39.9605 39.7168 35.9077 39.7168 27.8001V21.3501"
+            stroke="white"
+            stroke-width="2.8125"
+          />
+          <path
+            d="M16.1421 2H26.8579L28.2552 16.0116C28.3473 16.957 28.2411 17.9114 27.9435 18.8133C27.6459 19.7151 27.1635 20.5446 26.5273 21.2482C25.891 21.9518 25.1151 22.5141 24.2493 22.8989C23.3835 23.2837 22.447 23.4825 21.5 23.4825C20.553 23.4825 19.6165 23.2837 18.7507 22.8989C17.8849 22.5141 17.109 21.9518 16.4727 21.2482C15.8365 20.5446 15.3541 19.7151 15.0565 18.8133C14.7589 17.9114 14.6527 16.957 14.7448 16.0116L16.1421 2Z"
+            stroke="white"
+            stroke-width="2.8125"
+          />
+          <path
+            d="M2.91888 9.20465C3.30036 7.29115 3.4911 6.3344 3.87901 5.55825C4.2832 4.74993 4.85231 4.03591 5.54939 3.46254C6.24647 2.88916 7.05595 2.46925 7.92528 2.23005C8.76111 2 9.7341 2 11.6801 2H16.1421L14.5883 17.5768C14.5063 18.4682 14.2438 19.3335 13.8169 20.1196C13.39 20.9058 12.8076 21.5963 12.1055 22.1488C11.4033 22.7013 10.5961 23.1042 9.73337 23.3329C8.87059 23.5616 7.97036 23.6113 7.08779 23.4788C6.20522 23.3464 5.35888 23.0346 4.60059 22.5626C3.84229 22.0907 3.188 21.4684 2.67775 20.7339C2.16751 19.9995 1.81205 19.1683 1.63314 18.2912C1.45424 17.4141 1.45564 16.5097 1.63728 15.6332L2.91888 9.20465ZM40.0811 9.20465C39.6996 7.29115 39.5089 6.3344 39.121 5.55825C38.7168 4.74993 38.1477 4.03591 37.4506 3.46254C36.7535 2.88916 35.944 2.46925 35.0747 2.23005C34.2389 2 33.2659 2 31.3199 2H26.8579L28.4117 17.5768C28.4937 18.4682 28.7562 19.3335 29.1831 20.1196C29.61 20.9058 30.1924 21.5963 30.8945 22.1488C31.5967 22.7013 32.4039 23.1042 33.2666 23.3329C34.1294 23.5616 35.0296 23.6113 35.9122 23.4788C36.7948 23.3464 37.6411 23.0346 38.3994 22.5626C39.1577 22.0907 39.812 21.4684 40.3222 20.7339C40.8325 19.9995 41.188 19.1683 41.3669 18.2912C41.5458 17.4141 41.5444 16.5097 41.3627 15.6332L40.0811 9.20465Z"
+            stroke="white"
+            stroke-width="2.8125"
+          />
+          <path
+            d="M16.1421 43.9251V37.4751C16.1421 35.4648 16.1421 34.4608 16.5729 33.7126C16.855 33.2224 17.2608 32.8153 17.7495 32.5322C18.4953 32.1001 19.4961 32.1001 21.5 32.1001C23.5038 32.1001 24.5047 32.1001 25.2505 32.5322C25.7391 32.8153 26.1449 33.2224 26.4271 33.7126C26.8578 34.4608 26.8578 35.4648 26.8578 37.4751V43.9251"
+            stroke="white"
+            stroke-width="2.8125"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <h2 class="subtitle">Create your online store</h2>
+    <p class="description">Enter your data to create a new account</p>
+
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      [@shake]="formState"
+    >
+      <div
+        class="form-field"
+        [class.error]="
+          registerForm.get('storeName')?.invalid &&
+          registerForm.get('storeName')?.touched
+        "
+      >
+        <div class="input-container">
+          <span class="field-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 34 36"
+              fill="none"
+            >
+              <path
+                d="M3.3374 16.3999V21.1999C3.3374 27.2335 3.3374 30.2511 5.22123 32.1247C7.10506 33.9983 10.1349 33.9999 16.1963 33.9999H17.8037C23.865 33.9999 26.8965 33.9999 28.7787 32.1247C30.661 30.2495 30.6626 27.2335 30.6626 21.1999V16.3999"
+                stroke="#232323"
+                stroke-width="2.8125"
+              />
+              <path
+                d="M12.9817 2H21.0185L22.0665 12.4272C22.1355 13.1308 22.0559 13.841 21.8327 14.5122C21.6095 15.1834 21.2477 15.8006 20.7705 16.3242C20.2933 16.8479 19.7114 17.2663 19.062 17.5527C18.4127 17.8391 17.7103 17.987 17.0001 17.987C16.2898 17.987 15.5875 17.8391 14.9381 17.5527C14.2888 17.2663 13.7068 16.8479 13.2296 16.3242C12.7525 15.8006 12.3906 15.1834 12.1674 14.5122C11.9443 13.841 11.8646 13.1308 11.9337 12.4272L12.9817 2Z"
+                stroke="#232323"
+                stroke-width="2.8125"
+              />
+              <path
+                d="M3.06416 7.3616C3.35027 5.9376 3.49333 5.2256 3.78426 4.648C4.0874 4.04646 4.51423 3.5151 5.03704 3.0884C5.55985 2.6617 6.16696 2.34921 6.81896 2.1712C7.44583 2 8.17558 2 9.63506 2H12.9816L11.8163 13.592C11.7548 14.2554 11.5579 14.8993 11.2377 15.4844C10.9175 16.0694 10.4807 16.5833 9.95411 16.9944C9.42749 17.4056 8.82211 17.7055 8.17502 17.8757C7.52794 18.0459 6.85277 18.0828 6.19084 17.9842C5.52892 17.8857 4.89416 17.6537 4.32544 17.3024C3.75672 16.9512 3.266 16.4881 2.88331 15.9415C2.50063 15.3949 2.23404 14.7764 2.09986 14.1237C1.96568 13.471 1.96673 12.7979 2.10296 12.1456L3.06416 7.3616ZM30.9358 7.3616C30.6497 5.9376 30.5067 5.2256 30.2157 4.648C29.9126 4.04646 29.4858 3.5151 28.963 3.0884C28.4401 2.6617 27.833 2.34921 27.181 2.1712C26.5542 2 25.8244 2 24.3649 2H21.0184L22.1837 13.592C22.2452 14.2554 22.4421 14.8993 22.7623 15.4844C23.0825 16.0694 23.5193 16.5833 24.0459 16.9944C24.5725 17.4056 25.1779 17.7055 25.825 17.8757C26.4721 18.0459 27.1472 18.0828 27.8092 17.9842C28.4711 17.8857 29.1058 17.6537 29.6746 17.3024C30.2433 16.9512 30.734 16.4881 31.1167 15.9415C31.4994 15.3949 31.766 14.7764 31.9001 14.1237C32.0343 13.471 32.0333 12.7979 31.897 12.1456L30.9358 7.3616Z"
+                stroke="#232323"
+                stroke-width="2.8125"
+              />
+              <path
+                d="M12.9816 33.1999V28.3999C12.9816 26.9039 12.9816 26.1567 13.3046 25.5999C13.5163 25.2351 13.8206 24.9321 14.1871 24.7215C14.7465 24.3999 15.4971 24.3999 17 24.3999C18.5029 24.3999 19.2535 24.3999 19.8129 24.7215C20.1794 24.9321 20.4837 25.2351 20.6953 25.5999C21.0184 26.1567 21.0184 26.9039 21.0184 28.3999V33.1999"
+                stroke="#232323"
+                stroke-width="2.8125"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <input
+            type="text"
+            formControlName="storeName"
+            placeholder="Enter your store name"
+          />
+        </div>
+        <div
+          class="error-message"
+          *ngIf="
+            registerForm.get('storeName')?.invalid &&
+            registerForm.get('storeName')?.touched
+          "
+        >
+          Store name is required
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        [class.error]="
+          registerForm.get('email')?.invalid &&
+          registerForm.get('email')?.touched
+        "
+      >
+        <div class="input-container">
+          <span class="field-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+          </span>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div
+          class="error-message"
+          *ngIf="
+            registerForm.get('email')?.invalid &&
+            registerForm.get('email')?.touched
+          "
+        >
+          Please enter a valid email address
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        [class.error]="
+          registerForm.get('phoneNumber')?.invalid &&
+          registerForm.get('phoneNumber')?.touched
+        "
+      >
+        <div class="input-container">
+          <span class="field-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+              />
+            </svg>
+          </span>
+          <input
+            type="tel"
+            formControlName="phoneNumber"
+            placeholder="Enter your phone number"
+          />
+        </div>
+        <div
+          class="error-message"
+          *ngIf="
+            registerForm.get('phoneNumber')?.invalid &&
+            registerForm.get('phoneNumber')?.touched
+          "
+        >
+          Phone number is required
+        </div>
+      </div>
+
+      <div
+        class="form-field"
+        [class.error]="
+          registerForm.get('password')?.invalid &&
+          registerForm.get('password')?.touched
+        "
+      >
+        <div class="input-container">
+          <span class="field-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+              />
+            </svg>
+          </span>
+          <input
+            [type]="hidePassword ? 'password' : 'text'"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <button
+            type="button"
+            title="vision"
+            class="toggle-password"
+            (click)="togglePasswordVisibility()"
+          >
+            <svg
+              *ngIf="hidePassword"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 6c3.79 0 7.17 2.13 8.82 5.5-.59 1.22-1.42 2.27-2.41 3.12l1.41 1.41c1.39-1.23 2.49-2.77 3.18-4.53C21.27 7.11 17 4 12 4c-1.27 0-2.49.2-3.64.57l1.65 1.65C10.66 6.09 11.32 6 12 6zm-1.07 1.14L13 9.21c.57.25 1.03.71 1.28 1.28l2.07 2.07c.08-.34.14-.7.14-1.07C16.5 9.01 14.48 7 12 7c-.37 0-.72.05-1.07.14zM2.01 3.87l2.68 2.68C3.06 7.83 1.77 9.53 1 11.5 2.73 15.89 7 19 12 19c1.52 0 2.98-.29 4.32-.82l3.42 3.42 1.41-1.41L3.42 2.45 2.01 3.87zm7.5 7.5l2.61 2.61c-.04.01-.08.02-.12.02-1.38 0-2.5-1.12-2.5-2.5 0-.05.01-.08.01-.13zm-3.4-3.4l1.75 1.75c-.23.55-.36 1.15-.36 1.78 0 2.48 2.02 4.5 4.5 4.5.63 0 1.23-.13 1.77-.36l.98.98c-.88.24-1.8.38-2.75.38-3.79 0-7.17-2.13-8.82-5.5.7-1.43 1.72-2.61 2.93-3.53z"
+              />
+            </svg>
+            <svg
+              *ngIf="!hidePassword"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="error-message" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          Password must be at least 8 characters and include at least one uppercase letter, one lowercase letter, and one number
+        </div>
+      </div>
+
+      <div
+        class="terms-checkbox"
+        [class.error]="
+          registerForm.get('termsAccepted')?.invalid &&
+          registerForm.get('termsAccepted')?.touched
+        "
+      >
+        <label>
+          <input type="checkbox" formControlName="termsAccepted" />
+          <span
+            >I agree to the <a href="#">Terms of Use</a> and
+            <a href="#">Privacy Policy</a></span
+          >
+        </label>
+        <div
+          class="error-message"
+          *ngIf="
+            registerForm.get('termsAccepted')?.invalid &&
+            registerForm.get('termsAccepted')?.touched
+          "
+        >
+          You must accept the terms to continue
+        </div>
+      </div>
+
+      <div class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="create-button" [disabled]="registerForm.invalid || isLoading">
+        <span *ngIf="!isLoading">Create an account</span>
+        <span *ngIf="isLoading">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+          Processing...
+        </span>
+      </button>
+
+      <div class="login-link">
+        Already have an account? <a routerLink="/login">Log in</a>
+      </div>
+    </form>
+  </div>
+</div>
