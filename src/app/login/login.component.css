@@ -92,6 +92,7 @@ form {
 .input-container:focus-within {
   border-color: #333;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
 .field-icon {
@@ -107,8 +108,8 @@ form {
   height: 20px;
 }
 
-input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"] {
   flex: 1;
   padding: 15px 12px;
   font-family: Inter;
@@ -128,6 +129,11 @@ input[type="password"] {
   color: #666;
   display: flex;
   align-items: center;
+}
+
+.toggle-password:focus {
+  outline: none;
+  color: #000;
 }
 
 .toggle-password svg {
